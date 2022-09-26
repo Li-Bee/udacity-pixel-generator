@@ -36,4 +36,3 @@ function makeGrid() {
   table.appendChild(tableBody);
 }
 
-// https://stackoverflow.com/questions/14643617/create-table-using-javascript
