@@ -2,14 +2,16 @@
 var colorGrid = document.getElementById("colorPicker");
 
 // Select size input
-var sizeHeight = document.getElementById("inputHeight");
-var sizeWidth = document.getElementById("inputWidth");
+var sizeHeight = document.getElementById("inputHeight").value;
+var sizeWidth = document.getElementById("inputWidth").value;
 
 // When size is submitted by the user, call makeGrid()
 const form = document.getElementById("sizePicker");
 form.addEventListener("submit", makeGrid);
 
-function makeGrid() {
+function makeGrid(event) {
+  // stop automatic reset of form
+  event.preventDefault();
   // body reference - get first <body></body>
   var body = document.getElementsByTagName("body")[0];
 
@@ -35,4 +37,3 @@ function makeGrid() {
   // append the table body inside the table
   table.appendChild(tableBody);
 }
-
