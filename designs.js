@@ -20,11 +20,11 @@ function makeGrid(event) {
   var tableBody = document.createElement("tbody");
 
   // cells creation
-  for (let i = 0; i <= sizeHeight; i++) {
+  for (let i = 1; i <= sizeHeight; i++) {
     // create table row
     var tableRow = document.createElement("tr");
 
-    for (let i = 0; i <= sizeWidth; i++) {
+    for (let i = 1; i <= sizeWidth; i++) {
       // create table cells (cols) within each row - loop within loop
       var tableCell = document.createElement("td");
       // append cell to the row
@@ -37,3 +37,9 @@ function makeGrid(event) {
   // append the table body inside the table
   table.appendChild(tableBody);
 }
+
+table.addEventListener("click", function (event) {
+  if (event.target.tagName === "td") {
+    event.target.style.backgroundColor = colorGrid;
+  }
+});
